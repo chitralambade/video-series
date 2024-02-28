@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go Pro Hero 11</title>
+    <style>
+        .video-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        <video id="video1" controls>
+            <source src="Go pro 1.mp4" type="video/mp4">
+        </video>
+        <video id="video2" class="hidden" controls>
+            <source src="Go pro 2.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <script>
+        // JavaScript to switch between videos
+        document.addEventListener('DOMContentLoaded', function () {
+            var video1 = document.getElementById('video1');
+            var video2 = document.getElementById('video2');
+
+            video1.addEventListener('ended', function () {
+                video1.classList.add('hidden');
+                video2.classList.remove('hidden');
+                video2.play();
+            });
+        });
+    </script>
+</body>
+</html>
